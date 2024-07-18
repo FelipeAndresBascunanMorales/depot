@@ -12,9 +12,9 @@
   </head>
 
   <body>
-    <header class="bg-gray-800 text-white py-5 px-5">
+    <header class="flex bg-gray-800 text-white py-1 px-5">
       <%= image_tag 'logo.svg', alt: 'the sumarized store' %>
-      <h1><%= @page_title %></h1>
+      <h1 class="mx-8 my-auto"><%= @page_title.presence || 'Welcome to the Store' %></h1>
     </header>
     <section class="flex">
       <nav class="bg-gray-400 p-6">
@@ -29,5 +29,6 @@
         <%= yield %>
       </main>
     </section>
+    <span class="bg-gray-400"><i><%= Date.today.strftime('%b %y')%></i></span>
   </body>
 </html>
